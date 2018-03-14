@@ -1,12 +1,10 @@
 package com.example.springbootdemo;
 
-import org.springframework.boot.*;
-import org.springframework.boot.autoconfigure.*;
-import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@EnableAutoConfiguration
 public class SampleController {
 
     @RequestMapping("/")
@@ -15,7 +13,9 @@ public class SampleController {
         return "Hello World!";
     }
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(SampleController.class, args);
+    @RequestMapping("/users")
+    public String users(){
+        return "users";
     }
+
 }
